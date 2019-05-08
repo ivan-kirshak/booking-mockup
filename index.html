@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ukrainian Railways</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+    integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+</head>
+
+<body>
+  <header>
+    <nav class="desktop-menu">
+      <div class="flex"><a href="">schedule</a></div>
+      <div class="flex"><a href="">buy tickets</a></div>
+      <div class="flex"><a href="">intercity</a></div>
+      <div class="flex"><a href="">intercity +</a></div>
+      <div class="flex"><a href="">international connections</a></div>
+      <div class="flex"><a href="">cabinet</a></div>
+      <div class="flex"><a href="">ua</a></div>
+      <div class="flex active"><a href="">en</a></div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="ticket-form">
+      <form>
+        <label>From</label>
+        <input type="text">
+
+        <button type="button" onclick=""><i class='fas fa-exchange-alt'></i></button>
+
+        <label>To</label>
+        <input type="text">
+
+        <br>
+
+        <label>Date</label>
+        <input type="date">
+
+        <br>
+
+        <label>Passenger type</label>
+        <input list="passenger-type">
+        <datalist id="passenger-type">
+          <option value="Child (0-7 years)">
+          <option value="Pupil(7-16 years)">
+          <option value="Student(16-24 years)">
+          <option value="Adult (24-65 years)">
+          <option value="Senior(65+)">
+          <option value="Special type (documents)">
+        </datalist>
+
+        <br>
+
+        <label>Passengers</label>
+        <input type="number">
+
+        <br>
+
+        <button type="button" onclick="">Buy tickets</button>
+      </form>
+    </div>
+
+    <div class="logo">
+      <div class="column">
+        <div class="blue"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+      </div>
+
+      <div class="column">
+        <div class="yellow"></div>
+        <div class="blue"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+      </div>
+
+      <div class="column">
+        <div class="yellow"></div>
+        <div class="yellow"></div>
+        <div class="blue"></div>
+        <div class="yellow"></div>
+      </div>
+    </div>
+
+    <div class="lil">
+      <div class="lil-bloo">.</div>
+      <div class="lil-yella">.</div>
+    </div>
+
+    <p class="ur">ur</p>
+
+    <div class="wordlogo">
+      <p class="word ua">українські залізниці</p>
+      <p class="word en">ukrainian railways</p>
+    </div>
+
+
+  </main>
+
+  <footer>
+    <div class="foot"></div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

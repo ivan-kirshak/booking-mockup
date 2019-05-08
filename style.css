@@ -1,0 +1,156 @@
+/* General styles and variables */
+
+* {
+    margin: 0;
+    padding-inline-start: 0;
+    font-size: 16px;
+}
+
+:root {
+    --blue: rgb(53, 139, 255);
+    --yellow: rgb(255, 244, 104);
+    --black: rgb(0, 0, 0);
+    --font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+
+/* Header */
+.desktop-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex {
+    margin: 1rem;
+    font-family: var(--font-family);
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: 600;
+    box-sizing: content-box;
+}
+
+a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.active {
+    border: 1px solid black;
+}
+
+
+/* Ticket booking form */
+
+.ticket-form {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+label {
+    font-size: 2rem;
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+input[type=text], input[type=date], input[type=number], input[list="passenger-type"] {
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+button[type=button] {
+    font-size: 2rem;
+    font-family: var(--font-family);
+    font-weight: 600;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: var(--black);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/* aaand brand graphics */
+.logo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.yellow, .blue {
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    border-radius: 20%;
+}
+
+.yellow {
+    background-color: var(--yellow);
+}
+
+.blue {
+    background-color: var(--blue);
+}
+
+.wordlogo {
+    position: absolute;
+    top: 80%;
+    left: 15rem;
+}
+
+.lil {
+    position: absolute;
+    top: 82%;
+    left: 11rem;
+}
+
+.lil-bloo, .lil-yella {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin: 1px;
+}
+
+.lil-bloo {
+    color: var(--blue);
+    background-color: var(--blue);
+}
+
+.lil-yella {
+    color: var(--yellow);
+    background-color: var(--yellow);
+}
+
+.ur  {
+    position: absolute;
+    top: 78%;
+    left: 3rem;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 7rem;
+}
+
+.word {
+    font-family: var(--font-family);
+    font-size: 3rem;
+}
+
+.ua {
+    font-weight: 700;
+}
+.en {
+    font-weight: 500;
+}
+
+
+
+
+
+
