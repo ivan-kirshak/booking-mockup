@@ -1,0 +1,90 @@
+/* General styles and variables */
+
+* {
+    margin: 0;
+    padding-inline-start: 0;
+    font-size: 16px;
+}
+
+:root {
+    --blue: rgb(53, 139, 255);
+    --yellow: rgb(255, 244, 104);
+    --black: rgb(0, 0, 0);
+    --font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+
+/* Header */
+.desktop-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flex {
+    margin: 1rem;
+    font-family: var(--font-family);
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: 600;
+    box-sizing: content-box;
+}
+
+a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.active {
+    border: 1px solid black;
+}
+
+/* FOOTER */
+footer .foot {
+    background-color: var(--blue);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.foot-logo {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ur  {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 7rem;
+    line-height: 95%;
+}
+
+.word {
+    font-family: var(--font-family);
+    font-size: 3rem;
+}
+
+.ur, .word {
+    color: rgb(255, 255, 255);
+    padding-left: 2rem;
+}
+
+.ua {
+    font-weight: 700;
+}
+.en {
+    font-weight: 500;
+}
+
+.to-middle{
+    padding-top: 3rem; 
+}
+
+div > .contacts {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 2rem;
+}

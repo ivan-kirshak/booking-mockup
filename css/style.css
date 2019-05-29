@@ -149,6 +149,54 @@ button[type=button] {
     font-weight: 500;
 }
 
+/* FOOTER */
+footer .foot {
+    background-color: var(--blue);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.foot-logo {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ur-one  {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 7rem;
+    line-height: 95%;
+}
+
+.word-one {
+    font-family: var(--font-family);
+    font-size: 3rem;
+}
+
+.ur-one, .wordlogo-one {
+    color: rgb(255, 255, 255);
+    padding-left: 2rem;
+}
+
+.ua {
+    font-weight: 700;
+}
+.en {
+    font-weight: 500;
+}
+
+.to-middle{
+    padding-top: 3rem; 
+}
+
+div > .contacts {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 2rem;
+}
 
 
 
