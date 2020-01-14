@@ -13,6 +13,9 @@
     --font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
+body {
+    font-family: var(--font-family);
+}
 
 /* Header */
 .desktop-menu {
@@ -23,7 +26,6 @@
 
 .flex {
     margin: 1rem;
-    font-family: var(--font-family);
     font-size: 2rem;
     color: var(--black);
     font-weight: 600;
@@ -40,33 +42,89 @@ a {
     border: 1px solid black;
 }
 
+/* first container */
+.first-part {
+    display: flex;
+    justify-content: space-evenly;
+}
 
+/* left part */
+.left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.brand-logotype {
+    display: flex;
+    align-items: center;
+}
+.lil {
+    padding: 0.5rem;
+}
+.lil-bloo, .lil-yella {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin: 1px;
+}
+
+.lil-bloo {
+    color: var(--blue);
+    background-color: var(--blue);
+}
+
+.lil-yella {
+    color: var(--yellow);
+    background-color: var(--yellow);
+}
+
+.ur  {
+    font-weight: 700;
+    font-size: 7rem;
+    padding: 0.5rem;
+}
+.wordlogo {
+    padding: 0.5rem;
+}
+.word {
+    font-size: 3rem;
+}
+
+.ua {
+    font-weight: 700;
+}
+.en {
+    font-weight: 500;
+}
 /* Ticket booking form */
 
 .ticket-form {
-    position: absolute;
-    top: 15%;
-    left: 10%;
-    font-family: var(--font-family);
+    max-width: 80%;
+    margin: 1rem auto;
+    border: 2px solid var(--black);
+    border-radius: 15px;
     font-weight: 600;
+    padding: 1rem;
+    text-align: center;
 }
 
 label {
-    font-size: 2rem;
-    font-family: var(--font-family);
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
 input[type=text], input[type=date], input[type=number], input[list="passenger-type"] {
     border: none;
     border-bottom: 2px solid black;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 1rem;
 }
 
 button[type=button] {
-    font-size: 2rem;
     font-family: var(--font-family);
+    font-size: 1.75rem;
     font-weight: 600;
     margin: 1rem;
     padding: 0.5rem;
@@ -98,57 +156,193 @@ button[type=button] {
     background-color: var(--blue);
 }
 
-.wordlogo {
-    position: absolute;
-    top: 80%;
-    left: 15rem;
+/* SCHEDULE */
+.schedule-container {
+    width: 85%;
+    height: 72vh;
+    margin: 5vh auto 0 auto;
 }
 
-.lil {
-    position: absolute;
-    top: 82%;
-    left: 11rem;
-}
-
-.lil-bloo, .lil-yella {
-    display: block;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    margin: 1px;
-}
-
-.lil-bloo {
-    color: var(--blue);
-    background-color: var(--blue);
-}
-
-.lil-yella {
-    color: var(--yellow);
-    background-color: var(--yellow);
-}
-
-.ur  {
-    position: absolute;
-    top: 78%;
-    left: 3rem;
-    font-family: var(--font-family);
-    font-weight: 700;
-    font-size: 7rem;
-}
-
-.word {
+.heading {
     font-family: var(--font-family);
     font-size: 3rem;
 }
 
-.ua {
-    font-weight: 700;
+.subheading {
+    font-family: var(--font-family);
+    font-size: 2rem;
+    color: rgb(153, 150, 150);
 }
-.en {
+
+.table {
+    border: 2px solid var(--black);
+    margin-top: 2rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-family);
+    font-weight: 700;
+    margin: 1rem;
+    justify-content: space-between; 
+    align-content: space-between;
+}
+
+.row > p {
+    font-size: 2rem;
+}
+
+.flex-logos {
+    display: flex;
+    align-content: space-around;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.ict, .icplus {
+    font-family: Bahnschrift, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--black);
+    padding: 0.5rem 2rem;
+    background-color: var(--yellow);
+    border-radius: 10px;
+    margin-left: 2rem;
+}
+
+.int {
+    font-family: Bahnschrift, sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--yellow);
+    padding: 0.5rem 2rem;
+    background-color: var(--blue);
+    border-radius: 10px;
+    margin-left: 2rem;
+}
+
+.words {
+    font-family: var(--font-family);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+}
+
+.five {
+    font-family: var(--font-family);
+    font-size: 2rem;
     font-weight: 500;
 }
 
+/* INTERCITY, INTERCITY+ and International*/
+.banner {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+.first {
+    background-image: url(../media/1.jpg);
+}
+.second {
+    background-image: url(../media/2.jpg);
+}
+.third {
+    background-image: url(../media/3.jpeg);
+}
+.slogan-container {
+    flex-direction: column;
+    width: 45%;
+    margin: auto;
+    align-items: center;
+}
+
+.ic, .slogan {
+    font-family: var(--font-family);
+    background-color: rgba(255, 255, 255, 0.65);
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.slogan {
+    color: rgb(97, 97, 97);
+}
+
+/* CABINET */
+.form-container {
+    width: 85%;
+    height: 72vh;
+    margin: 5vh auto 0 auto;
+}
+
+.internal-form-container {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.heading {
+    font-family: var(--font-family);
+    font-size: 3rem;
+}
+
+label, .or, .login {
+    font-size: 2rem;
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+
+.login {
+    width: 10rem;
+    padding-top: 1rem;
+}
+
+input[type=text], input[type=password] {
+    border: none;
+    border-bottom: 2px solid var(--black);
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.or{
+    width: 3rem;
+    margin-left: 40%;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.log-icon {
+    margin: 0 2rem;
+}
+
+.log-sign {
+    font-family: var(--font-family);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+button {
+    font-size: 2rem;
+    font-family: var(--font-family);
+    font-weight: 600;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    color: var(--black);
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+}
 /* FOOTER */
 footer .foot {
     background-color: var(--blue);
@@ -164,14 +358,12 @@ footer .foot {
 }
 
 .ur-one  {
-    font-family: var(--font-family);
     font-weight: 700;
     font-size: 7rem;
     line-height: 95%;
 }
 
 .word-one {
-    font-family: var(--font-family);
     font-size: 3rem;
 }
 
@@ -193,7 +385,6 @@ footer .foot {
 
 div > .contacts {
     color: rgb(255, 255, 255);
-    font-family: var(--font-family);
     font-weight: 600;
     font-size: 2rem;
 }
