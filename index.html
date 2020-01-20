@@ -21,7 +21,7 @@
       <div class="flex"><a href="#intercity-plus">intercity +</a></div>
       <div class="flex"><a href="#international">international connections</a></div>
     </nav>
-    <i class='fas fa-bars'></i>
+    <button class="menu-btn" id="menuBtn">menu</button>
   </header>
 
   <main>
@@ -74,40 +74,39 @@
         <form>
           <label>From</label>
           <input type="text" id="buyTicketFrom">
-
+          <div class="error" id="ticketFromErr"></div>
           <button type="button" id="changeBtn"><i class='fas fa-exchange-alt'></i></button>
 
           <label>To</label>
           <input type="text" id="buyTicketTo">
-
+          <div class="error" id="ticketToErr"></div>
           <br>
 
           <label>Date</label>
           <input type="date" id="buyTicketWhen">
-
           <br>
 
           <label>Passenger type</label>
-          <input list="passenger-type">
-          <datalist id="passenger-type">
-            <option value="Child (0-7 years)">
-            <option value="Pupil(7-16 years)">
-            <option value="Student(16-24 years)">
-            <option value="Adult (24-65 years)">
-            <option value="Senior(65+)">
-            <option value="Special type (documents)">
-          </datalist>
+          <select id="passenger-type">
+            <option value="Child (0-7 years)">Child (0-7 years)</option>
+            <option value="Pupil(7-16 years)">Pupil(7-16 years)</option>
+            <option value="Student(16-24 years)">Student(16-24 years)</option>
+            <option value="Adult (24-65 years)">Adult (24-65 years)</option>
+            <option value="Senior(65+)">Senior(65+)</option>
+            <option value="Special type (documents)">Special type (documents)</option>
+          </select>
 
           <br>
 
           <label>Passengers</label>
           <input type="number" id="passengerNum">
-
+          <div class="error" id="passErr"></div>
           <br>
 
           <button type="button" id="buyTicket">Buy tickets</button>
         </form>
       </div>
+      <div id="ticketSummary"></div>
     </div>
     <div id="schedule">
       <div class="schedule-container">
@@ -181,12 +180,12 @@
           <form>
             <label>Login</label>
             <input type="text" id="loginText">
-
+            <div class="error" id="logTextErr"></div>
             <br>
 
             <label>Password</label>
             <input type="password" id="loginPassw">
-
+            <div class="error" id="logPassErr"></div>
             <br>
             <input type="button" value="Log in" class="login-button" id="logBtn">
           </form>
@@ -198,18 +197,19 @@
           <form>
             <label>Name:</label>
             <input type="text" id="regisText">
-
+            <div class="error" id="regTextErr"></div>
             <br>
-
             <label>Email:</label>
             <input type="email" name="" id="regisEmail">
+            <div class="error" id="regMailErr"></div>
             <br>
-
             <label>Password:</label>
             <input type="password" id="regPassOne">
+            <div class="error" id="regPassOneErr"></div>
             <br>
             <label>Type password again:</label>
             <input type="password" id="regPassTwo">
+            <div class="error" id="regPassTwoErr"></div>
             <br>
             <input type="button" value="Register" class="register-button" id="registerBtn">
           </form>
@@ -220,6 +220,8 @@
             <button style='font-size:2rem;color:rgb(255, 0, 0)'>Google <i class='fab fa-google'
                 style='font-size:2rem;color:rgb(255, 0, 0)'></i></button>
           </div>
+        </div>
+        <div id="loginSummary">
         </div>
       </div>
     </div>
