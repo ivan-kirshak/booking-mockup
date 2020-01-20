@@ -12,20 +12,20 @@
 </head>
 
 <body>
-  <header>
+  <header id="header">
     <nav class="desktop-menu">
       <div class="flex"><a href="#schedule">schedule</a></div>
       <div class="flex"><a href="#buy-tickets">buy tickets</a></div>
+      <div class="flex"><a href="#cabinet">cabinet</a></div>
       <div class="flex"><a href="#intercity">intercity</a></div>
       <div class="flex"><a href="#intercity-plus">intercity +</a></div>
       <div class="flex"><a href="#international">international connections</a></div>
-      <div class="flex"><a href="#cabinet">cabinet</a></div>
-      <div class="flex"><a href="">ua</a></div>
-      <div class="flex active"><a href="">en</a></div>
     </nav>
+    <i class='fas fa-bars'></i>
   </header>
 
   <main>
+    <button id="toTopBtn" title="Go to Top">top</button>
     <div class="first-part">
       <div class="left-container">
         <div class="brand-logotype">
@@ -68,21 +68,22 @@
     </div>
 
     <div class="second-part" id="buy-tickets">
-
+      <h1 class="heading">Train booking form</h1>
+      <h2 class="subheading">Here you can book and buy tickets for all our trains in service</h2>
       <div class="ticket-form">
         <form>
           <label>From</label>
-          <input type="text">
+          <input type="text" id="buyTicketFrom">
 
-          <button type="button"><i class='fas fa-exchange-alt'></i></button>
+          <button type="button" id="changeBtn"><i class='fas fa-exchange-alt'></i></button>
 
           <label>To</label>
-          <input type="text">
+          <input type="text" id="buyTicketTo">
 
           <br>
 
           <label>Date</label>
-          <input type="date">
+          <input type="date" id="buyTicketWhen">
 
           <br>
 
@@ -100,11 +101,11 @@
           <br>
 
           <label>Passengers</label>
-          <input type="number">
+          <input type="number" id="passengerNum">
 
           <br>
 
-          <button type="button" onclick="">Buy tickets</button>
+          <button type="button" id="buyTicket">Buy tickets</button>
         </form>
       </div>
     </div>
@@ -170,6 +171,59 @@
       </div>
     </div>
 
+    <div id="cabinet">
+      <div class="form-container">
+        <h1 class="heading">Personal cabinet</h1>
+        <h2 class="subheading">Here you can log into your account or make new one</h2>
+
+        <div class="internal-form-container">
+          <h2 class="subheading">Log into your account</h2>
+          <form>
+            <label>Login</label>
+            <input type="text" id="loginText">
+
+            <br>
+
+            <label>Password</label>
+            <input type="password" id="loginPassw">
+
+            <br>
+            <input type="button" value="Log in" class="login-button" id="logBtn">
+          </form>
+
+          <br>
+
+          <h2 class="subheading">New to our service? Make your account!</h2>
+          <br>
+          <form>
+            <label>Name:</label>
+            <input type="text" id="regisText">
+
+            <br>
+
+            <label>Email:</label>
+            <input type="email" name="" id="regisEmail">
+            <br>
+
+            <label>Password:</label>
+            <input type="password" id="regPassOne">
+            <br>
+            <label>Type password again:</label>
+            <input type="password" id="regPassTwo">
+            <br>
+            <input type="button" value="Register" class="register-button" id="registerBtn">
+          </form>
+          <h2 class="subheading">You can log in or register via social media:</h2>
+          <div class="social-media">
+            <button style='font-size:2rem;color:rgb(0, 0, 255)'>Facebook <i class='fab fa-facebook'
+                style='font-size:2rem;color:rgb(0, 0, 255)'></i></button>
+            <button style='font-size:2rem;color:rgb(255, 0, 0)'>Google <i class='fab fa-google'
+                style='font-size:2rem;color:rgb(255, 0, 0)'></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="intercity">
       <div class="banner first">
         <div class="slogan-container">
@@ -197,33 +251,6 @@
       </div>
     </div>
 
-    <div id="cabinet">
-      <div class="form-container">
-        <h1 class="heading">Personal cabinet</h1>
-
-        <div class="internal-form-container">
-          <form>
-            <label>Login</label>
-            <input type="text">
-
-            <br>
-
-            <label>Password</label>
-            <input type="password">
-          </form>
-
-          <p class="or">or</p>
-
-          <div class="social-media">
-            <p class="login">Log in via:</p>
-
-            <button style='font-size:2rem;color:rgb(0, 0, 255)'>Facebook <i class='fab fa-facebook'
-                style='font-size:2rem;color:rgb(0, 0, 255)'></i></button>
-            <button style='font-size:2rem;color:rgb(255, 0, 0)'>Google <i class='fab fa-google'
-                style='font-size:2rem;color:rgb(255, 0, 0)'></i></button>
-          </div>
-        </div>
-      </div>
   </main>
 
   <footer>
