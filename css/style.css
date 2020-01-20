@@ -2,19 +2,27 @@
 
 * {
     margin: 0;
-    padding-inline-start: 0;
+    padding: 0;
     font-size: 16px;
 }
 
 :root {
     --blue: rgb(53, 139, 255);
     --yellow: rgb(255, 244, 104);
+    --white: rgb(255, 255, 255);
     --black: rgb(0, 0, 0);
     --font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: var(--font-family);
+}
+
+.error {
+    color: rgb(255, 0, 0);
 }
 
 /* Header */
@@ -37,9 +45,29 @@ a {
     font-size: 2rem;
     color: var(--black);
 }
-
-.active {
-    border: 1px solid black;
+.menu-btn, .mobile-logo {
+    font-family: var(--font-family);
+    font-weight: 700;
+    padding: 0.5rem;
+    border: 1px solid var(--black);
+    display: none;
+}
+.mobile-logo {
+    border: none;
+}
+/* to Top button */
+#toTopBtn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    color: rgb(255, 0, 0);
+    background-color: var(--white);
+    border: none;
+    font-size: 1rem;
+}
+#toTopBtn:hover{
+    background-color: rgb(255, 0, 0);
+    color: var(--white);
 }
 
 /* first container */
@@ -98,43 +126,6 @@ a {
 .en {
     font-weight: 500;
 }
-/* Ticket booking form */
-
-.ticket-form {
-    max-width: 80%;
-    margin: 1rem auto;
-    border: 2px solid var(--black);
-    border-radius: 15px;
-    font-weight: 600;
-    padding: 1rem;
-    text-align: center;
-}
-
-label {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-input[type=text], input[type=date], input[type=number], input[list="passenger-type"] {
-    border: none;
-    border-bottom: 2px solid black;
-    font-size: 1.5rem;
-    margin: 1rem;
-}
-
-button[type=button] {
-    font-family: var(--font-family);
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin: 1rem;
-    padding: 0.5rem;
-    border: 2px solid black;
-    border-radius: 10px;
-    color: var(--black);
-    background-color: rgb(255, 255, 255);
-    cursor: pointer;
-}
-
 /* aaand brand graphics */
 .logo {
     display: flex;
@@ -156,11 +147,50 @@ button[type=button] {
     background-color: var(--blue);
 }
 
+/* Ticket booking form */
+
+.ticket-form {
+    max-width: 80%;
+    margin: 1rem auto;
+    border: 2px solid var(--black);
+    border-radius: 15px;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: center;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+input[type=text], input[type=date], input[type=number], select {
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 1.5rem;
+    margin: 1rem;
+}
+
+button[type=button] {
+    font-family: var(--font-family);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: var(--black);
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+
 /* SCHEDULE */
-.schedule-container {
-    width: 85%;
-    height: 72vh;
+.second-part, .schedule-container {
+    max-width: 85%;
+    height: 100vh;
     margin: 5vh auto 0 auto;
+    padding-top: 5rem;
 }
 
 .heading {
@@ -235,6 +265,76 @@ button[type=button] {
     font-weight: 500;
 }
 
+/* CABINET */
+#cabinet {
+    min-height: 100vh;
+}
+.form-container {
+    max-width: 85%;
+    margin: 5vh auto 0 auto;
+}
+
+.internal-form-container {
+    max-width: 90%;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+.heading {
+    font-family: var(--font-family);
+    font-size: 3rem;
+}
+
+label, .or {
+    font-size: 2rem;
+    font-family: var(--font-family);
+    font-weight: 600;
+}
+input[type=text], input[type=password], input[type=email] {
+    border: none;
+    border-bottom: 2px solid var(--black);
+    font-size: 2rem;
+    margin: 1rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+.login-button, .register-button {
+    font-size: 1rem;
+    padding: 0.75rem;
+    font-family: var(--font-family);
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.login-button {
+    color: var(--white);
+    background-color: rgb(0, 180, 0);
+}
+.register-button {
+    color: var(--white);
+    background-color: rgb(0, 102, 255);
+}
+
+button {
+    font-size: 2rem;
+    font-family: var(--font-family);
+    font-weight: 600;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--black);
+    border-radius: 10px;
+    color: var(--black);
+    background-color: var(--white);
+    cursor: pointer;
+}
+#loginSummary {
+    text-align: center;
+}
 /* INTERCITY, INTERCITY+ and International*/
 .banner {
     display: flex;
@@ -254,7 +354,7 @@ button[type=button] {
 }
 .slogan-container {
     flex-direction: column;
-    width: 45%;
+    max-width: 45%;
     margin: auto;
     align-items: center;
 }
@@ -271,78 +371,6 @@ button[type=button] {
     color: rgb(97, 97, 97);
 }
 
-/* CABINET */
-.form-container {
-    width: 85%;
-    height: 72vh;
-    margin: 5vh auto 0 auto;
-}
-
-.internal-form-container {
-    width: 70%;
-    margin: auto;
-    text-align: center;
-}
-
-.heading {
-    font-family: var(--font-family);
-    font-size: 3rem;
-}
-
-label, .or, .login {
-    font-size: 2rem;
-    font-family: var(--font-family);
-    font-weight: 600;
-}
-
-.login {
-    width: 10rem;
-    padding-top: 1rem;
-}
-
-input[type=text], input[type=password] {
-    border: none;
-    border-bottom: 2px solid var(--black);
-    font-size: 2rem;
-    margin: 1rem;
-}
-
-.or{
-    width: 3rem;
-    margin-left: 40%;
-    border: 1px solid var(--black);
-    border-radius: 50%;
-    text-align: center;
-    padding: 0.5rem;
-}
-
-.social-media {
-    display: flex;
-    justify-content: center;
-}
-
-.log-icon {
-    margin: 0 2rem;
-}
-
-.log-sign {
-    font-family: var(--font-family);
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-button {
-    font-size: 2rem;
-    font-family: var(--font-family);
-    font-weight: 600;
-    margin: 1rem;
-    padding: 0.5rem;
-    border: 1px solid var(--black);
-    border-radius: 10px;
-    color: var(--black);
-    background-color: rgb(255, 255, 255);
-    cursor: pointer;
-}
 /* FOOTER */
 footer .foot {
     background-color: var(--blue);
@@ -368,7 +396,7 @@ footer .foot {
 }
 
 .ur-one, .wordlogo-one {
-    color: rgb(255, 255, 255);
+    color: var(--white);
     padding-left: 2rem;
 }
 
@@ -384,12 +412,32 @@ footer .foot {
 }
 
 div > .contacts {
-    color: rgb(255, 255, 255);
+    color: var(--white);
     font-weight: 600;
     font-size: 2rem;
 }
 
+/* MEDIA QUERIRES */
+@media (max-width: 1368px) {
 
+}
 
+@media (max-width: 1280px) {
 
+}
 
+@media (max-width: 1068px) {
+    .menu-btn {
+        display: block;
+    }
+    .desktop-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+
+}
+@media (max-width: 475px) {
+
+}
