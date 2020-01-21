@@ -133,7 +133,7 @@ function validTicket() {
         passErr = false;
     }
     // if validity above is checked and ok, then print summary of order
-    if (fromVal !== "" && toVal !== "" && buyVal !== "" && passTypVal !== "" && passNumVal !== "") {
+    if (fromVal !== "" && toVal !== "" && buyVal !== "" && passTypVal !== "" && passNumVal !== "" && passNumVal >= 1 && nameRegex.test(toVal) !== false && nameRegex.test(fromVal) !== false) {
         ticketSummary.innerHTML = `<h1 class="heading">You have ordered a ticket from ${fromVal} to ${toVal} on ${buyVal} for ${passNumVal} passengers of ${passTypVal} type.</h1>`
     }
 
