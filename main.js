@@ -67,7 +67,9 @@ toTopBtn.addEventListener("click", goToTop, false);
 //Mobile menu button 
 function mobileMenu() {
     if (menu.style.display === "none") {
-        menu.style.display = "block";
+        menu.style.display = "flex";
+        menu.style.flexDirection = "column";
+        menu.style.alignItems = "center";
         menuBtn.innerText = "close menu";
     } else {
         menu.style.display = "none";
