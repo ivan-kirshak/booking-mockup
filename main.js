@@ -76,14 +76,27 @@ function mobileMenu() {
 }
 menuBtn.addEventListener("click", mobileMenu, false);
 //VALIDATION OF FORMS
-let nameRegex = /^[a-zA-Z\s]+$/;
+let nameRegex = /[A-Za-z_0-9]/;
 let emailRegex = /^\S+@\S+\.\S+$/;
 
 // Display error
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
 }
-
+//when log\sign in completed, go to tickets booking part
+function goToBooking() {
+    buyTickets.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+//create button when login/register completed
+function toTicketsBtn() {
+    let tcktBtn = document.createElement("button");
+    tcktBtn.classList.add("ticket-button");
+    tcktBtn.innerText = "Buy tickets";
+    tcktBtn.addEventListener("click", goToBooking, false);
+    loginSummary.appendChild(tcktBtn);
+}
 // Ticket booking form validation 
 function validTicket() {
     //values
@@ -138,25 +151,26 @@ function loginValid() {
 
     logTextErr = logPassErr = true;
     //check validity of Login
-    if (loginVal == "" && nameRegex.test(loginVal) === false) {
+    if (loginVal == "" || nameRegex.test(loginVal) === false) {
         printError("logTextErr", "Please, print your login name or email");
     } else {
         printError("logTextErr", "");
         logTextErr = false;
     }
     //check validity of password
-    if (logPassVal == "" && nameRegex.test(logPassVal) === false) {
+    if (logPassVal == "" || nameRegex.test(logPassVal) === false) {
         printError("logPassErr", "Please, print your password");
     } else {
         printError("logPassErr", "");
         logPassErr = false;
     }
     // if validation passed, then make summary of login
-    if (loginVal !== "" && logPassVal !== "") {
+    if (loginVal !== "" && logPassVal !== "" && nameRegex.test(logPassVal) !== false && nameRegex.test(loginVal) !== false) {
         loginSummary.innerHTML = `<h1 class="heading">You have logged as ${loginVal}</h1>`;
         loginSummary.scrollIntoView({
             behavior: "smooth"
         });
+        toTicketsBtn();
     }
 }
 logBtn.addEventListener("click", loginValid, false);
@@ -176,39 +190,40 @@ function registValid() {
 
     regTextErr = regMailErr = regMailErr = regPassTwoErr = true;
     //check validity of Name
-    if (regTextVal == "" && nameRegex.test(regTextVal) === false) {
+    if (regTextVal === "" || nameRegex.test(regTextVal) === false) {
         printError("regTextErr", "Please, write your name");
     } else {
         printError("regTextErr", "");
         regTextErr = false;
     }
     //check validity of Email
-    if (regMailVal == "" && emailRegex.test(regMailVal) === false) {
+    if (regMailVal === "" || emailRegex.test(regMailVal) === false) {
         printError("regMailErr", "Please, print your email");
     } else {
         printError("regMailErr", "");
         regMailErr = false;
     }
     //check validity of First Password
-    if (regPassOneVal == "" && nameRegex.test(regPassOneVal) === false) {
-        printError("regPassOneErr", "Please, print your login name or email");
+    if (regPassOneVal === "" || nameRegex.test(regPassOneVal) === false) {
+        printError("regPassOneErr", "Please, print your password");
     } else {
         printError("regPassOneErr", "");
         regPassOneErr = false;
     }
     //check validity of Second Password
-    if (regPassTwoVal == "" && regPassOneVal === regPassTwoVal && nameRegex.test(regPassTwoVal) === false) {
-        printError("regPassTwoErr", "Please, print your login name or email");
+    if (regPassTwoVal == "" || regPassOneVal !== regPassTwoVal || nameRegex.test(regPassTwoVal) === false) {
+        printError("regPassTwoErr", "Please, print your password again");
     } else {
         printError("regPassTwoErr", "");
         regPassTwoErr = false;
     }
     // if validation passed, then make summary of registration
-    if (regTextVal !== "" && regMailVal !== "" && regPassOneVal !== "" && regPassTwoVal !=="") {
+    if (regTextVal !== "" && regMailVal !== "" && regPassOneVal !== "" && regPassTwoVal !== "" && regPassOneVal === regPassTwoVal && nameRegex.test(regPassOneVal) !== false && emailRegex.test(regMailVal) !== false && nameRegex.test(regTextVal) !== false) {
         loginSummary.innerHTML = `<h1 class="heading">You have registered as ${regTextVal} using ${regMailVal} email.</h1>`;
         loginSummary.scrollIntoView({
             behavior: "smooth"
         });
+        toTicketsBtn();
     }
 }
 registBtn.addEventListener("click", registValid, false);
