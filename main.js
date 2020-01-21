@@ -112,21 +112,21 @@ function validTicket() {
 
     ticketFromErr = ticketToErr = passErr = true;
     //check validity of "from"
-    if (fromVal == "" && nameRegex.test(fromVal) === false) {
+    if (fromVal === "" || nameRegex.test(fromVal) === false) {
         printError("ticketFromErr", "Print where are you going from");
     } else {
         printError("ticketFromErr", "");
         ticketFromErr = false;
     }
     //check validity of "to"
-    if (toVal == "" && nameRegex.test(toVal) === false) {
+    if (toVal === "" || nameRegex.test(toVal) === false) {
         printError("ticketToErr", "Print where are you going to");
     } else {
         printError("ticketToErr", "");
         ticketToErr = false;
     }
     //check validity of passengers
-    if (passNumVal == "" && passNumVal << "1") {
+    if (passNumVal === "" || passNumVal < 1) {
         printError("passErr", "Please, select 1 or more passengers");
     } else {
         printError("passErr", "");
