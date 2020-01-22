@@ -34,7 +34,15 @@ let regisEmail = document.getElementById("regisEmail");
 let regPassOne = document.getElementById("regPassOne");
 let regPassTwo = document.getElementById("regPassTwo");
 let registBtn = document.getElementById("registerBtn");
-
+// Credit card form
+let cardForm = document.getElementById("creditCard");
+let cardOwner = document.getElementById("cardOwner");
+let cvvNum = document.getElementById("cvvNum");
+let cardNum = document.getElementById("cardNum");
+let validMonth = document.getElementById("validMonth");
+let validYear = document.getElementById("validYear");
+let payBtn = document.getElementById("payment");
+let paymentSummary = document.getElementById("paymentSummary");
 //Smooth Scroll
 
 schedule.scrollIntoView({
@@ -80,11 +88,64 @@ menuBtn.addEventListener("click", mobileMenu, false);
 //VALIDATION OF FORMS
 let nameRegex = /[A-Za-z_0-9]/;
 let emailRegex = /^\S+@\S+\.\S+$/;
+let numRegex = /[0-9]/;
+let cardOwnRegex = /[A-Za-z]/;
 
 // Display error
 function printError(elemId, hintMsg) {
     document.getElementById(elemId).innerHTML = hintMsg;
 }
+// check the payment data
+function checkPayment() {
+    //values
+    let cardOwnVal = cardOwner.value;
+    let cardNumVal = cardNum.value;
+    let cvvNumVal = cvvNum.value;
+    let valMonVal = validMonth.value;
+    let valYrVal = validYear.value;
+    //errors
+    let cardOwnErr = document.getElementById("cardOwnErr");
+    let cardNumErr = document.getElementById("cardNumErr");
+    let cvvNumErr = document.getElementById("cvvNumErr");
+    let validDateErr = document.getElementById("validDateErr");
+
+    cardOwnErr = cardNumErr = cvvNumErr = validDateErr = true;
+    // check the validity of card owner
+    if (cardOwnVal === "" || cardOwnRegex.test(cardOwnVal) === false) {
+        printError("cardOwnErr", "Please write down card owner's name");
+    } else {
+        printError("cardOwnErr", "");
+        cardOwnErr = false;
+    }
+    // check the validity of card number
+    if (cardNumVal === "" || numRegex.test(cardNumVal) === false || cardNumVal.length !== 16) {
+        printError("cardNumErr", "Please write down correct card number");
+    } else {
+        printError("cardNumErr", "");
+        cardNumErr = false;
+    }
+    // check the validity of cvv number
+    if (cvvNumVal === "" || numRegex.test(cvvNumVal) === false || cvvNumVal.length !== 3) {
+        printError("cvvNumErr", "Please write down correct CVV number");
+    } else {
+        printError("cvvNumErr", "");
+        cvvNumErr = false;
+    }
+    // check the validity of validity term
+    if (valMonVal === "" || valYrVal === "" || valMonVal.length !== 2 || valYrVal.length !== 2 || numRegex.test(valMonVal) === false || numRegex.test(valYrVal) === false) {
+        printError("validDateErr", "Please write down correct validity term. If your month less than 10, print 0 firstly.");
+    } else {
+        printError("validDateErr", "");
+        validDateErr = false;
+    }
+    // if everything is correct, complete the summary of payment
+    if ((cardOwnErr || cardNumErr || cvvNumErr || validDateErr ) === true) {
+        return false;
+    } else {
+        paymentSummary.innerHTML = `<h1 class="heading">${cardOwnVal}, your payment completed via card number ${cardNumVal}</h1>`;
+    }
+}
+payBtn.addEventListener("click", checkPayment, false)
 //when log\sign in completed, go to tickets booking part
 function goToBooking() {
     buyTickets.scrollIntoView({
@@ -136,7 +197,7 @@ function validTicket() {
     }
     // if validity above is checked and ok, then print summary of order
     if (fromVal !== "" && toVal !== "" && buyVal !== "" && passTypVal !== "" && passNumVal !== "" && passNumVal >= 1 && nameRegex.test(toVal) !== false && nameRegex.test(fromVal) !== false) {
-        ticketSummary.innerHTML = `<h1 class="heading">You have ordered a ticket from ${fromVal} to ${toVal} on ${buyVal} for ${passNumVal} passengers of ${passTypVal} type.</h1>`
+        ticketSummary.innerHTML = `<h1 class="heading">You have ordered a ticket from ${fromVal} to ${toVal} on ${buyVal} for ${passNumVal} passengers of ${passTypVal} type. You can purchase your ticket below.</h1>`
     }
 
 }

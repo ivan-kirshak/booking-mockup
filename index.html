@@ -106,8 +106,46 @@
           <button type="button" id="buyTicket">Buy tickets</button>
         </form>
       </div>
+      <br>
+      <hr>
+      <br>
       <div id="ticketSummary"></div>
+      <br>
+      <hr>
+      <br>
+      <h2 class="subheading">Here you can complete the payment for your ticket</h2>
+      <div class="credit-card-form" id="creditCard">
+        <form>
+          <label for="cardOwner">Card Owner</label>
+          <input type="text" name="cardOwner" id="cardOwner">
+          <div class="error" id="cardOwnErr"></div>
+          <br>
+          <label for="cardNum">Card Number</label>
+          <input type="text" name="cardNum" id="cardNum">
+          <div class="error" id="cardNumErr"></div>
+          <br>
+          <label for="cvvNum">CVV Number</label>
+          <input type="text" name="cvv" id="cvvNum">
+          <div class="error" id="cvvNumErr"></div>
+          <br>
+          <label for="valid till">Valid till</label>
+          <input type="text" name="validMonth" id="validMonth">
+          <label for="slash">/</label>
+          <input type="text" name="validYear" id="validYear">
+          <div class="error" id="validDateErr"></div>
+          <br>
+          <button type="button" id="payment">Confirm</button>
+        </form>
+      </div>
+      <br>
+      <hr>
+      <br>
+      <div id="paymentSummary"></div>
+      <br>
+      <hr>
+      <br>
     </div>
+    <br>
     <div id="schedule">
       <div class="schedule-container">
         <h1 class="heading">Train schedule</h1>
@@ -189,9 +227,9 @@
             <br>
             <input type="button" value="Log in" class="login-button" id="logBtn">
           </form>
-
           <br>
-
+          <hr>
+          <br>
           <h2 class="subheading">New to our service? Make your account!</h2>
           <br>
           <form>
@@ -213,6 +251,9 @@
             <br>
             <input type="button" value="Register" class="register-button" id="registerBtn">
           </form>
+          <br>
+          <hr>
+          <br>
           <h2 class="subheading">You can log in or register via social media:</h2>
           <div class="social-media">
             <button style='font-size:2rem;color:rgb(0, 0, 255)'>Facebook <i class='fab fa-facebook'

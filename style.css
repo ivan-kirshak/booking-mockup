@@ -24,6 +24,9 @@ body {
 .error {
   color: rgb(255, 0, 0);
 }
+.active {
+  background-color: var(--yellow);
+}
 
 /* Header */
 .desktop-menu {
@@ -151,15 +154,19 @@ a {
 }
 
 /* Ticket booking form */
-
-.ticket-form {
+.ticket-form, .credit-card-form {
   max-width: 80%;
   margin: 1rem auto;
-  border: 2px solid var(--black);
   border-radius: 15px;
   font-weight: 600;
   padding: 1rem;
   text-align: center;
+}
+.ticket-form {
+  border: 2px solid var(--blue);
+}
+.credit-card-form {
+  border: 2px solid var(--yellow);
 }
 
 label {
@@ -189,12 +196,18 @@ button[type="button"] {
   background-color: var(--white);
   cursor: pointer;
 }
+#cvvNum {
+  width: 3rem;
+}
+#validMonth, #validYear{
+  width: 2rem;
+}
 
 /* SCHEDULE */
 .second-part,
 .schedule-container {
   max-width: 85%;
-  height: 100vh;
+  min-height: 100vh;
   margin: 5vh auto 0 auto;
   padding-top: 5rem;
 }
