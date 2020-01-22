@@ -132,7 +132,8 @@ function checkPayment() {
         cvvNumErr = false;
     }
     // check the validity of validity term
-    if (valMonVal === "" || valYrVal === "" || valMonVal.length !== 2 || valYrVal.length !== 2 || numRegex.test(valMonVal) === false || numRegex.test(valYrVal) === false) {
+    if (valMonVal === "" || valYrVal === "" || valMonVal.length !== 2 || valYrVal.length !== 2 
+    || numRegex.test(valMonVal) === false || numRegex.test(valYrVal) === false) {
         printError("validDateErr", "Please write down correct validity term. If your month less than 10, print 0 firstly.");
     } else {
         printError("validDateErr", "");
@@ -142,7 +143,8 @@ function checkPayment() {
     if ((cardOwnErr || cardNumErr || cvvNumErr || validDateErr ) === true) {
         return false;
     } else {
-        paymentSummary.innerHTML = `<h1 class="heading">${cardOwnVal}, your payment completed via card number ${cardNumVal}</h1>`;
+        paymentSummary.innerHTML = `<h1 class="heading">${cardOwnVal}, 
+        your payment completed via card number ${cardNumVal}</h1>`;
     }
 }
 payBtn.addEventListener("click", checkPayment, false)
@@ -196,10 +198,13 @@ function validTicket() {
         passErr = false;
     }
     // if validity above is checked and ok, then print summary of order
-    if (fromVal !== "" && toVal !== "" && buyVal !== "" && passTypVal !== "" && passNumVal !== "" && passNumVal >= 1 && nameRegex.test(toVal) !== false && nameRegex.test(fromVal) !== false) {
-        ticketSummary.innerHTML = `<h1 class="heading">You have ordered a ticket from ${fromVal} to ${toVal} on ${buyVal} for ${passNumVal} passengers of ${passTypVal} type. You can purchase your ticket below.</h1>`
+    if ((ticketFromErr || ticketToErr || passErr) === true) {
+        return false;
+    } else {
+        ticketSummary.innerHTML = `<h1 class="heading">You have ordered a 
+        ticket from ${fromVal} to ${toVal} on ${buyVal} for ${passNumVal}
+        passengers of ${passTypVal} type. You can purchase your ticket below.</h1>`
     }
-
 }
 buyBtn.addEventListener("click", validTicket, false);
 
@@ -228,7 +233,9 @@ function loginValid() {
         logPassErr = false;
     }
     // if validation passed, then make summary of login
-    if (loginVal !== "" && logPassVal !== "" && nameRegex.test(logPassVal) !== false && nameRegex.test(loginVal) !== false) {
+    if ((logTextErr || logPassErr) === true) {
+        return false;
+    } else {
         loginSummary.innerHTML = `<h1 class="heading">You have logged as ${loginVal}</h1>`;
         loginSummary.scrollIntoView({
             behavior: "smooth"
@@ -281,7 +288,9 @@ function registValid() {
         regPassTwoErr = false;
     }
     // if validation passed, then make summary of registration
-    if (regTextVal !== "" && regMailVal !== "" && regPassOneVal !== "" && regPassTwoVal !== "" && regPassOneVal === regPassTwoVal && nameRegex.test(regPassOneVal) !== false && emailRegex.test(regMailVal) !== false && nameRegex.test(regTextVal) !== false) {
+    if ((regTextErr || regMailErr || regMailErr || regPassTwoErr) === true) {
+        return false;
+    } else {
         loginSummary.innerHTML = `<h1 class="heading">You have registered as ${regTextVal} using ${regMailVal} email.</h1>`;
         loginSummary.scrollIntoView({
             behavior: "smooth"
