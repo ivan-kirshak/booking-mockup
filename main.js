@@ -44,26 +44,47 @@ let validYear = document.getElementById("validYear");
 let payBtn = document.getElementById("payment");
 let paymentSummary = document.getElementById("paymentSummary");
 //Smooth Scroll
+function scheduleScroll() {
+    schedule.scrollIntoView({
+        behavior: 'smooth'
+    })
+}
+schedule.addEventListener("click", scheduleScroll, false);
 
-schedule.scrollIntoView({
-    behavior: 'smooth'
-});
-buyTickets.scrollIntoView({
-    behavior: 'smooth'
-});
-intercity.scrollIntoView({
-    behavior: 'smooth'
-});
-intercityPlus.scrollIntoView({
-    behavior: 'smooth'
-});
-international.scrollIntoView({
-    behavior: 'smooth'
-});
-cabinet.scrollIntoView({
-    behavior: 'smooth'
-});
+function buyTicketScroll() {
+    buyTickets.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+buyTickets.addEventListener("click", buyTicketScroll, false);
 
+function intercityScroll() {
+    intercity.scrollIntoView({
+        behavior: 'smooth'
+    })
+}
+intercity.addEventListener("click", intercityScroll, false);
+
+function intercityPlusScroll() {
+    intercityPlus.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+intercityPlus.addEventListener("click", intercityPlusScroll, false);
+
+function internationalScroll() {
+    international.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+international.addEventListener("click", internationalScroll, false);
+
+function cabinetScroll() {
+    cabinet.scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+cabinet.addEventListener("click", cabinetScroll, false);
 // To Top Button
 function goToTop() {
     header.scrollIntoView({
@@ -132,15 +153,15 @@ function checkPayment() {
         cvvNumErr = false;
     }
     // check the validity of validity term
-    if (valMonVal === "" || valYrVal === "" || valMonVal.length !== 2 || valYrVal.length !== 2 
-    || numRegex.test(valMonVal) === false || numRegex.test(valYrVal) === false) {
+    if (valMonVal === "" || valYrVal === "" || valMonVal.length !== 2 || valYrVal.length !== 2
+        || numRegex.test(valMonVal) === false || numRegex.test(valYrVal) === false) {
         printError("validDateErr", "Please write down correct validity term. If your month less than 10, print 0 firstly.");
     } else {
         printError("validDateErr", "");
         validDateErr = false;
     }
     // if everything is correct, complete the summary of payment
-    if ((cardOwnErr || cardNumErr || cvvNumErr || validDateErr ) === true) {
+    if ((cardOwnErr || cardNumErr || cvvNumErr || validDateErr) === true) {
         return false;
     } else {
         paymentSummary.innerHTML = `<h1 class="heading">${cardOwnVal}, 
