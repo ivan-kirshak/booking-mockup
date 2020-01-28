@@ -99,10 +99,9 @@ function mobileMenu() {
         menu.style.display = "flex";
         menu.style.flexDirection = "column";
         menu.style.alignItems = "center";
-        menuBtn.innerText = "close menu";
+        menu.style.borderBottom = "1px solid #808080"
     } else {
         menu.style.display = "none";
-        menuBtn.innerText = "menu";
     }
 }
 menuBtn.addEventListener("click", mobileMenu, false);
