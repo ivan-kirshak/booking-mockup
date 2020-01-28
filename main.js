@@ -99,7 +99,7 @@ function mobileMenu() {
         menu.style.display = "flex";
         menu.style.flexDirection = "column";
         menu.style.alignItems = "center";
-        menu.style.borderBottom = "1px solid #808080"
+        menu.style.borderBottom = "1px solid #808080";
     } else {
         menu.style.display = "none";
     }
@@ -168,6 +168,7 @@ function checkPayment() {
     }
 }
 payBtn.addEventListener("click", checkPayment, false)
+
 //when log\sign in completed, go to tickets booking part
 function goToBooking() {
     buyTickets.scrollIntoView({
@@ -227,6 +228,21 @@ function validTicket() {
     }
 }
 buyBtn.addEventListener("click", validTicket, false);
+
+// swap values 
+function swapValues () {
+    // first scenario (ES6)
+    // let a = buyFrom.value;
+    // let b = buyTo.value;
+    // [a, b] = [b, a];
+
+    // second scenario (temporary variable)
+    let tmp = buyFrom.value;
+    buyFrom.value = buyTo.value;
+    buyTo.value = tmp;
+}
+
+changeBtn.addEventListener("click", swapValues, false);
 
 //Log in form validation
 function loginValid() {
