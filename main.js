@@ -188,7 +188,7 @@ function validTicket() {
     //values
     let fromVal = buyFrom.value;
     let toVal = buyTo.value;
-    let buyVal = buyWhen.value;
+    let buyVal = new Date(buyWhen.value).toDateString();
     let passTypVal = passType.value;
     let passNumVal = Number(passengers.value);
     //errors
