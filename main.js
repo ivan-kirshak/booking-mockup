@@ -110,6 +110,7 @@ let nameRegex = /[A-Za-z_0-9]/;
 let emailRegex = /^\S+@\S+\.\S+$/;
 let numRegex = /[0-9]/;
 let cardOwnRegex = /[A-Za-z]/;
+let uCaseRegex = /[A-Z]/;
 
 // Display error
 function printError(elemId, hintMsg) {
@@ -230,7 +231,7 @@ function validTicket() {
 buyBtn.addEventListener("click", validTicket, false);
 
 // swap values 
-function swapValues () {
+function swapValues() {
     // first scenario (ES6)
     // let a = buyFrom.value;
     // let b = buyTo.value;
@@ -310,21 +311,31 @@ function registValid() {
         regMailErr = false;
     }
     //check validity of First Password
-    if (regPassOneVal === "" || nameRegex.test(regPassOneVal) === false) {
+    if (regPassOneVal === "") {
         printError("regPassOneErr", "Please, print your password");
+    } else if (nameRegex.test(regPassOneVal) === false) {
+        printError("regPassOneErr", "Please, print proper password");
+    } else if (regPassOneVal.length < 8) {
+        printError("regPassOneErr", "Your password has to be at least 8 characters long");
+    } else if (numRegex.test(regPassOneVal) === false) {
+        printError("regPassOneErr", "Your password has to contain numbers");
+    } else if (uCaseRegex.test(regPassOneVal) === false) {
+        printError("regPassOneErr", "Your password has to contain uppercase letter");
     } else {
         printError("regPassOneErr", "");
         regPassOneErr = false;
     }
     //check validity of Second Password
-    if (regPassTwoVal == "" || regPassOneVal !== regPassTwoVal || nameRegex.test(regPassTwoVal) === false) {
+    if (regPassTwoVal === "") {
         printError("regPassTwoErr", "Please, print your password again");
+    } else if (regPassOneVal !== regPassTwoVal) {
+        printError("regPassTwoErr", "Your passwords don't match.");
     } else {
         printError("regPassTwoErr", "");
         regPassTwoErr = false;
     }
     // if validation passed, then make summary of registration
-    if ((regTextErr || regMailErr || regMailErr || regPassTwoErr) === true) {
+    if ((regTextErr || regMailErr || regMailErr || regPassOneErr || regPassTwoErr) === true) {
         return false;
     } else {
         loginSummary.innerHTML = `<h1 class="heading">You have registered as ${regTextVal} using ${regMailVal} email.</h1>`;
