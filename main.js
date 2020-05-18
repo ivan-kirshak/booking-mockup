@@ -43,65 +43,73 @@ let validMonth = document.getElementById("validMonth");
 let validYear = document.getElementById("validYear");
 let payBtn = document.getElementById("payment");
 let paymentSummary = document.getElementById("paymentSummary");
-//Smooth Scroll
-function scheduleScroll() {
-    schedule.scrollIntoView({
-        behavior: 'smooth'
-    })
-}
-schedule.addEventListener("click", scheduleScroll, false);
 
-function buyTicketScroll() {
-    buyTickets.scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-buyTickets.addEventListener("click", buyTicketScroll, false);
+// //Smooth Scroll
+// function scheduleScroll() {
+//     schedule.scrollIntoView({
+//         behavior: 'smooth'
+//     })
+// }
+// schedule.addEventListener("click", scheduleScroll, false);
 
-function intercityScroll() {
-    intercity.scrollIntoView({
-        behavior: 'smooth'
-    })
-}
-intercity.addEventListener("click", intercityScroll, false);
+// function buyTicketScroll() {
+//     buyTickets.scrollIntoView({
+//         behavior: 'smooth'
+//     });
+// }
+// buyTickets.addEventListener("click", buyTicketScroll, false);
 
-function intercityPlusScroll() {
-    intercityPlus.scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-intercityPlus.addEventListener("click", intercityPlusScroll, false);
+// function intercityScroll() {
+//     intercity.scrollIntoView({
+//         behavior: 'smooth'
+//     })
+// }
+// intercity.addEventListener("click", intercityScroll, false);
 
-function internationalScroll() {
-    international.scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-international.addEventListener("click", internationalScroll, false);
+// function intercityPlusScroll() {
+//     intercityPlus.scrollIntoView({
+//         behavior: 'smooth'
+//     });
+// }
+// intercityPlus.addEventListener("click", intercityPlusScroll, false);
 
-function cabinetScroll() {
-    cabinet.scrollIntoView({
+// function internationalScroll() {
+//     international.scrollIntoView({
+//         behavior: 'smooth'
+//     });
+// }
+// international.addEventListener("click", internationalScroll, false);
+
+// function cabinetScroll() {
+//     cabinet.scrollIntoView({
+//         behavior: 'smooth'
+//     });
+// }
+// cabinet.addEventListener("click", cabinetScroll, false);
+// // To Top Button
+// function goToTop() {
+//     header.scrollIntoView({
+//         behavior: 'smooth'
+//     });
+// }
+// toTopBtn.addEventListener("click", goToTop, false);
+
+let scrollItems = [schedule, buyTickets, intercity, intercityPlus, international, cabinet];
+for (let i = 0; i < scrollItems.length; i++) {
+    scrollItems[i].onclick = () => {scrollItems[i].scrollIntoView({
         behavior: 'smooth'
-    });
+    })}
 }
-cabinet.addEventListener("click", cabinetScroll, false);
-// To Top Button
-function goToTop() {
-    header.scrollIntoView({
-        behavior: 'smooth'
-    });
-}
-toTopBtn.addEventListener("click", goToTop, false);
 
 //Mobile menu button 
 function mobileMenu() {
-    if (menu.style.display === "none") {
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
         menu.style.display = "flex";
         menu.style.flexDirection = "column";
         menu.style.alignItems = "center";
         menu.style.borderBottom = "1px solid #808080";
-    } else {
-        menu.style.display = "none";
     }
 }
 menuBtn.addEventListener("click", mobileMenu, false);

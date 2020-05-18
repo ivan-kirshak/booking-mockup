@@ -68,6 +68,9 @@ a {
   background-color: var(--white);
   border: none;
   font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 15px;
 }
 #toTopBtn:hover {
   background-color: rgb(255, 0, 0);
