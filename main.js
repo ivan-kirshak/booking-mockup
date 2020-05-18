@@ -44,56 +44,6 @@ let validYear = document.getElementById("validYear");
 let payBtn = document.getElementById("payment");
 let paymentSummary = document.getElementById("paymentSummary");
 
-// //Smooth Scroll
-// function scheduleScroll() {
-//     schedule.scrollIntoView({
-//         behavior: 'smooth'
-//     })
-// }
-// schedule.addEventListener("click", scheduleScroll, false);
-
-// function buyTicketScroll() {
-//     buyTickets.scrollIntoView({
-//         behavior: 'smooth'
-//     });
-// }
-// buyTickets.addEventListener("click", buyTicketScroll, false);
-
-// function intercityScroll() {
-//     intercity.scrollIntoView({
-//         behavior: 'smooth'
-//     })
-// }
-// intercity.addEventListener("click", intercityScroll, false);
-
-// function intercityPlusScroll() {
-//     intercityPlus.scrollIntoView({
-//         behavior: 'smooth'
-//     });
-// }
-// intercityPlus.addEventListener("click", intercityPlusScroll, false);
-
-// function internationalScroll() {
-//     international.scrollIntoView({
-//         behavior: 'smooth'
-//     });
-// }
-// international.addEventListener("click", internationalScroll, false);
-
-// function cabinetScroll() {
-//     cabinet.scrollIntoView({
-//         behavior: 'smooth'
-//     });
-// }
-// cabinet.addEventListener("click", cabinetScroll, false);
-// // To Top Button
-// function goToTop() {
-//     header.scrollIntoView({
-//         behavior: 'smooth'
-//     });
-// }
-// toTopBtn.addEventListener("click", goToTop, false);
-
 let scrollItems = [schedule, buyTickets, intercity, intercityPlus, international, cabinet];
 for (let i = 0; i < scrollItems.length; i++) {
     scrollItems[i].onclick = () => {scrollItems[i].scrollIntoView({
