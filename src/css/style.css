@@ -157,7 +157,8 @@ a {
 }
 
 /* Ticket booking form */
-.ticket-form, .credit-card-form {
+.ticket-form,
+.credit-card-form {
   max-width: 80%;
   margin: 1rem auto;
   border-radius: 15px;
@@ -202,7 +203,8 @@ button[type="button"] {
 #cvvNum {
   width: 3rem;
 }
-#validMonth, #validYear{
+#validMonth,
+#validYear {
   width: 2rem;
 }
 
