@@ -44,12 +44,12 @@ let validYear = document.getElementById("validYear");
 let payBtn = document.getElementById("payment");
 let paymentSummary = document.getElementById("paymentSummary");
 
-let scrollItems = [schedule, buyTickets, intercity, intercityPlus, international, cabinet];
-for (let i = 0; i < scrollItems.length; i++) {
-    scrollItems[i].onclick = () => {scrollItems[i].scrollIntoView({
-        behavior: 'smooth'
-    })}
-}
+// let scrollItems = [schedule, buyTickets, intercity, intercityPlus, international, cabinet];
+// for (let i = 0; i < scrollItems.length; i++) {
+//     scrollItems[i].onclick = () => {scrollItems[i].scrollIntoView({
+//         behavior: 'smooth'
+//     })}
+// }
 
 //Mobile menu button 
 function mobileMenu() {

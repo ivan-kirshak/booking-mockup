@@ -1,0 +1,29 @@
+{
+  "name": "booking-mockup.github.io",
+  "version": "1.0.0",
+  "description": "mockup of train ticket booking site",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivan-kirshak/booking-mockup.git"
+  },
+  "author": "Ivan Kirshak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ivan-kirshak/booking-mockup/issues"
+  },
+  "homepage": "https://github.com/ivan-kirshak/booking-mockup#readme",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "node-sass": "^4.14.1"
+  }
+}
