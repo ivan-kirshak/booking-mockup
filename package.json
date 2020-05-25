@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "mockup of train ticket booking site",
   "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivan-kirshak/booking-mockup.git"
@@ -17,11 +14,30 @@
   },
   "homepage": "https://github.com/ivan-kirshak/booking-mockup#readme",
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "autoprefixer": "^9.8.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "normalize.css": "^8.0.1",
+    "postcss-cli": "^7.1.1"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "not IE_Mob 11",
+    "maintained node versions"
+  ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "scripts": {
+    "build:css": "postcss src/css/style.css -o build/css/style.css",
+    "build": "npm run build:css"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-uglify-es": "^2.0.0",
     "node-sass": "^4.14.1"
