@@ -2,6 +2,7 @@ const gulp = require('gulp');
 // const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
 let uglify = require('gulp-uglify-es').default;
+const cleanCSS = require('gulp-clean-css');
 
 // SCSS compile (Gulp 4 syntax)
 // sass.compiler = require('node-sass');
@@ -17,6 +18,13 @@ function html() {
         .pipe(gulp.dest('build'));
 }
 
+// some experiments with css/sass
+gulp.task('minify-css', () => {
+    return gulp.src('src/css/*.css')
+        .pipe(cleanCSS({ compatibility: 'ie8' }))
+        .pipe(gulp.dest('build/css'));
+});
+
 function images() {
     return gulp.src('src/media/*')
         .pipe(imagemin())
@@ -31,17 +39,17 @@ gulp.task("uglify", function () {
 
 
 // just trying to use autoprefixes with clean css
-gulp.task('autoprefixer', () => {
-    const autoprefixer = require('autoprefixer')
-    const sourcemaps = require('gulp-sourcemaps')
-    const postcss = require('gulp-postcss')
-   
-    return gulp.src('./src/*.css')
-      .pipe(sourcemaps.init())
-      .pipe(postcss([ autoprefixer() ]))
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest('./build/css'))
-  })
+// gulp.task('autoprefixer', () => {
+//     const autoprefixer = require('autoprefixer')
+//     const sourcemaps = require('gulp-sourcemaps')
+//     const postcss = require('gulp-postcss')
+
+//     return gulp.src('./src/*.css')
+//         .pipe(sourcemaps.init())
+//         .pipe(postcss([autoprefixer('last 4 version')]))
+//         .pipe(sourcemaps.write('.'))
+//         .pipe(gulp.dest('build/css'))
+// })
 
 //line below makes function above run when called
 // exports.style = style;
