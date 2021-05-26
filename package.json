@@ -15,7 +15,7 @@
   "homepage": "https://github.com/ivan-kirshak/booking-mockup#readme",
   "dependencies": {
     "autoprefixer": "^9.8.0",
-    "browserslist": "^4.12.0",
+    "browserslist": "^4.16.5",
     "gulp-sourcemaps": "^2.6.5",
     "normalize.css": "^8.0.1",
     "postcss-cli": "^7.1.1"
